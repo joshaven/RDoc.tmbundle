@@ -22,3 +22,8 @@ and I'll be happy to incorporate your changes.
 == Installation
 
     git clone git://github.com/joshaven/RDoc.tmbundle.git ~/Library/Application\ Support/TextMate/Bundles/RDoc.tmbundle
+
+
+== Copyright
+
+Copyright (c) 2009 Joshaven Potter. See LICENSE for the MIT License details.
