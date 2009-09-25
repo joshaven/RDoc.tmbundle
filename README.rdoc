@@ -1,0 +1,24 @@
+= RDoc.tmbundle
+
+Enrich your TextMate experience with RDoc files.
+
+* Code Repository: http://github.com/joshaven/RDoc.tmbundle
+* Joshaven Potter: yourtech@gmail.com
+
+
+== Credits
+
+Thank you Jason Noble for your simple approach to previewing in TextMate.  
+http://tinyurl.com/yea3p38
+
+
+== Notes
+
+Currently, this RDoc TextMate bundle only provides a method of previewing.  
+Maybe I'll get around to syntax highlighting, or maybe you will... Contact me 
+and I'll be happy to incorporate your changes.
+
+
+== Installation
+
+    git clone git://github.com/joshaven/RDoc.tmbundle.git ~/Library/Application\ Support/TextMate/Bundles/RDoc.tmbundle

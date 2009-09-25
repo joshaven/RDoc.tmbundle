@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby -rrdoc/markup/simple_markup -rrdoc/markup/simple_markup/to_html
+
+# Thank you Jason Noble!
+# http://jasonnoble.org/2009/04/rdoc-preview-in-textmate.html
+input = ARGF ? ARGF.read : STDIN.read
+print SM::SimpleMarkup.new.convert(input, SM::ToHtml.new)
