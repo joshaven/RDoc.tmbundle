@@ -14,6 +14,8 @@
 	<string>Preview</string>
 	<key>output</key>
 	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>text.rdoc</string>
 	<key>uuid</key>
 	<string>F6B6AB4B-C441-4B35-A184-AC92F78ACB34</string>
 </dict>

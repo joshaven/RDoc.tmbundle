@@ -4,6 +4,11 @@
 <dict>
 	<key>name</key>
 	<string>RDoc</string>
+	<key>ordering</key>
+	<array>
+		<string>F6B6AB4B-C441-4B35-A184-AC92F78ACB34</string>
+		<string>753B331D-F00D-435B-A7F5-3E6D311438D0</string>
+	</array>
 	<key>uuid</key>
 	<string>136C2B51-91CA-43C6-97A8-5911987C832A</string>
 </dict>
