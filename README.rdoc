@@ -1,22 +1,11 @@
 = RDoc.tmbundle
 
-Enrich your TextMate experience with RDoc files.
+Enrich your RDoc authoring experience.  Installing this TextMate bundle will teach textmate 
+how to properly display RDoc in the preview.  For example, if you have a README.rdoc you 
+can press <Control> + <Option> + <CMD> + <p> to preview the html output.
 
 * Code Repository: http://github.com/joshaven/RDoc.tmbundle
 * Joshaven Potter: yourtech@gmail.com
-
-
-== Credits
-
-Thank you Jason Noble for your simple approach to previewing in TextMate.  
-http://tinyurl.com/yea3p38
-
-
-== Notes
-
-Currently, this RDoc TextMate bundle only provides a method of previewing.  
-Maybe I'll get around to syntax highlighting, or maybe you will... Contact me 
-and I'll be happy to incorporate your changes.
 
 
 == Installation
@@ -24,9 +13,10 @@ and I'll be happy to incorporate your changes.
     
 You will want to run the following line to reload the bundles if TextMate was open during the install...
     osascript -e 'tell app "TextMate" to reload bundles'
-    
 
-== Taking things one step further
+
+== Optional Customization of your Ruby.tmbundle
+Take things one step further by launching your app's RDocs from any .rb file:
 The following will setup TextMate to regenerate the rdocs and open them in Safari when you press Ctrl+Opt+CMD+p from any .rb file.
 
 * Edit the bundles within TextMate Ctrl+Opt+CMD+b
@@ -41,6 +31,20 @@ The following will setup TextMate to regenerate the rdocs and open them in Safar
 * Click on the Action Key Equivalent setting section and set as Ctrl+Opt+CMD+p
 * Close the bundle editor and choose Bundles > Bundle Editor > Reload Bundles
 * Enjoy faster access to your RDocs
+
+
+== Credits
+
+Thank you Jason Noble for your simple approach to previewing in TextMate.  
+http://tinyurl.com/yea3p38
+
+
+== Notes
+
+Currently, this RDoc TextMate bundle only provides a method of previewing.  
+Maybe I'll get around to syntax highlighting, or maybe you will... Contact me 
+and I'll be happy to incorporate your changes.
+
 
 == Copyright
 
