@@ -40,7 +40,7 @@ The following will setup TextMate to regenerate the rdocs and open them in Safar
     
 * Click on the Action Key Equivalent setting section and set as Ctrl+Opt+CMD+p
 * Close the bundle editor and choose Bundles > Bundle Editor > Reload Bundles
-* Enjoy the fast access to a rdoc view of your current file.
+* Enjoy faster access to your RDocs
 
 == Copyright
 
