@@ -20,9 +20,27 @@ and I'll be happy to incorporate your changes.
 
 
 == Installation
-
     git clone git://github.com/joshaven/RDoc.tmbundle.git ~/Library/Application\ Support/TextMate/Bundles/RDoc.tmbundle
+    
+You will want to run the following line to reload the bundles if TextMate was open during the install...
+    osascript -e 'tell app "TextMate" to reload bundles'
+    
 
+== Taking things one step further
+The following will setup TextMate to regenerate the rdocs and open them in Safari when you press Ctrl+Opt+CMD+p from any .rb file.
+
+* Edit the bundles within TextMate Ctrl+Opt+CMD+b
+* Choose the "Run" command from the "Ruby" bundle and click the copy button (double plus sign)
+* Type "Preview" to rename what is currently called "Run copy"
+* Replace the context with the following in the text area on the right labeled: Command(s)
+  
+    #!/bin/bash --posix 
+    rake rdoc
+    osascript -e "tell application \"Safari\" to open location \"file:///$TM_PROJECT_DIRECTORY/rdoc/index.html\""
+    
+* Click on the Action Key Equivalent setting section and set as Ctrl+Opt+CMD+p
+* Close the bundle editor and choose Bundles > Bundle Editor > Reload Bundles
+* Enjoy the fast access to a rdoc view of your current file.
 
 == Copyright
 
