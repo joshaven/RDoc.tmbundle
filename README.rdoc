@@ -35,10 +35,8 @@ The following will setup TextMate to regenerate the rdocs and open them in Safar
 
 == Credits
 
-Thank you Jason Noble for your simple approach to previewing in TextMate.  
-http://tinyurl.com/yea3p38
-Thank you Elia Schito for your addition of a RDoc help file: CMD+Shift+H
-http://github.com/elia
+* Thank you Jason Noble for your simple approach to previewing in TextMate. http://tinyurl.com/yea3p38
+* Thank you Elia Schito for your addition of a RDoc help file: CMD+Shift+H http://github.com/elia
 
 == Notes
 
