@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>"$TM_BUNDLE_SUPPORT/bin/rdoc2html" &lt;&lt;-HELP
+= Introduction
+
+SimpleMarkup parses plain text documents and attempts to decompose
+them into their constituent parts. Some of these parts are high-level:
+paragraphs, chunks of verbatim text, list entries and the like. Other
+parts happen at the character level: a piece of bold text, a word in
+code font. This markup is similar in spirit to that used on WikiWiki
+webs, where folks create web pages using a simple set of formatting
+rules.
+
+SimpleMarkup itself does no output formatting: this is left to a
+different set of classes.
+
+SimpleMarkup is extendable at runtime: you can add new markup
+elements to be recognised in the documents that SimpleMarkup parses.
+
+SimpleMarkup is intended to be the basis for a family of tools which
+share the common requirement that simple, plain-text should be
+rendered in a variety of different output formats and media. It is
+envisaged that SimpleMarkup could be the basis for formating RDoc
+style comment blocks, Wiki entries, and online FAQs.
+
+= Basic Formatting
+
+* SimpleMarkup looks for a document's natural left margin. This is
+  used as the initial margin for the document.
+
+* Consecutive lines starting at this margin are considered to be a
+  paragraph.
+
+* If a paragraph starts with a "*", "-", or with "&lt;digit&gt;.", then it is
+  taken to be the start of a list. The margin in increased to be the
+  first non-space following the list start flag. Subsequent lines
+  should be indented to this new margin until the list ends. For
+  example:
+
+     * this is a list with three paragraphs in
+       the first item. This is the first paragraph.
+
+       And this is the second paragraph.
+
+       1. This is an indented, numbered list.
+       2. This is the second item in that list
+
+       This is the third conventional paragraph in the
+       first list item.
+
+     * This is the second item in the original list
+
+* You can also construct labeled lists, sometimes called description
+  or definition lists. Do this by putting the label in square brackets
+  and indenting the list body:
+
+      [cat]  a small furry mammal
+             that seems to sleep a lot
+
+      [ant]  a little insect that is known
+             to enjoy picnics
+
+  A minor variation on labeled lists uses two colons to separate the
+  label from the list body:
+
+      cat::  a small furry mammal
+             that seems to sleep a lot
+
+      ant::  a little insect that is known
+             to enjoy picnics
+    
+  This latter style guarantees that the list bodies' left margins are
+  aligned: think of them as a two column table.
+
+* Any line that starts to the right of the current margin is treated
+  as verbatim text. This is useful for code listings. The example of a
+  list above is also verbatim text.
+
+* A line starting with an equals sign (=) is treated as a
+  heading. Level one headings have one equals sign, level two headings
+  have two,and so on.
+
+* A line starting with three or more hyphens (at the current indent)
+  generates a horizontal rule. THe more hyphens, the thicker the rule
+  (within reason, and if supported by the output device)
+
+* You can use markup within text (except verbatim) to change the
+  appearance of parts of that text. Out of the box, SimpleMarkup
+  supports word-based and general markup.
+
+  Word-based markup uses flag characters around individual words:
+
+  [\*word*]  displays word in a *bold* font
+  [\_word_]  displays word in an _emphasized_ font
+  [\+word+]  displays word in a +code+ font
+
+  General markup affects text between a start delimiter and and end
+  delimiter. Not surprisingly, these delimiters look like HTML markup.
+
+  [\&lt;b&gt;text...&lt;/b&gt;]    displays word in a *bold* font
+  [\&lt;em&gt;text...&lt;/em&gt;]  displays word in an _emphasized_ font
+  [\&lt;i&gt;text...&lt;/i&gt;]    displays word in an _emphasized_ font
+  [\&lt;tt&gt;text...&lt;/tt&gt;]  displays word in a +code+ font
+
+  Unlike conventional Wiki markup, general markup can cross line
+  boundaries. You can turn off the interpretation of markup by
+  preceding the first character with a backslash, so \\\&lt;b&gt;bold
+  text&lt;/b&gt; and \\\*bold* produce \&lt;b&gt;bold text&lt;/b&gt; and \*bold
+  respectively.
+
+= Using SimpleMarkup
+
+For information on using SimpleMarkup programatically, 
+see SM::SimpleMarkup.
+
+Author::   Dave Thomas,  dave@pragmaticprogrammer.com
+Version::  0.0
+License::  Ruby license
+
+
+= Session
+
+As mentioned throughout the CLI documentation, an interactive Shard
+session can be invoked via the command line by simply executing index.rb
+at this point all modules of the type 'cli' are loaded, among with regular
+modules to provide their functionality. Each cli module may register hook::cli
+which allows it to regsiter commands. 
+
+=== Invokes hook::cli
+Each hook implementation should return an array of hashes, which register
+commands to the CLI::Session.
+
+==== Required attributes 
+- title:       Title of command
+- description: Description of command
+- pattern:     Regular expression to match pattern
+- syntax:      Usage syntax to help the user invoking the command
+- callback:    Callback when pattern is matched
+
+==== Example implementation
+  def cli
+   [
+     {                                                              
+       :title =&gt; 'Help',                                            
+       :description =&gt; 'Output command help and usage information.',
+       :pattern =&gt; /^[\s]*help/,                             
+       :syntax =&gt; 'help',                          
+       :callback =&gt; 'self.usage',                                   
+     }
+   ]
+  end
+
+HELP</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@H</string>
+	<key>name</key>
+	<string>Syntax Help</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>text.rdoc</string>
+	<key>uuid</key>
+	<string>D9942AAA-BC78-43AC-90F4-C3E332F28E58</string>
+</dict>
+</plist>
