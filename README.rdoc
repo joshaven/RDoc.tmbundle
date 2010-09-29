@@ -8,11 +8,6 @@ can press <Control> + <Option> + <CMD> + <p> to preview the html output.
 * Joshaven Potter: yourtech@gmail.com
 
 
-== Requirements
-
-* Ruby >= 1.9.1
-
-
 == Installation
     git clone git://github.com/joshaven/RDoc.tmbundle.git ~/Library/Application\ Support/TextMate/Bundles/RDoc.tmbundle
     

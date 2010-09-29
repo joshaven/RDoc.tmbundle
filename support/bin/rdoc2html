@@ -1,6 +1,14 @@
-#!/usr/bin/env ruby -rrdoc/markup -rrdoc/markup/to_html
+#!/usr/bin/env ruby
 
 # Thank you Jason Noble!
 # http://jasonnoble.org/2009/04/rdoc-preview-in-textmate.html
 input = ARGF ? ARGF.read : STDIN.read
-print RDoc::Markup.new.convert(input, RDoc::Markup::ToHtml.new)
+if (RUBY_VERSION < '1.9')
+  require 'rdoc/markup/simple_markup'
+  require 'rdoc/markup/simple_markup/to_html'
+  print SM::SimpleMarkup.new.convert(input, SM::ToHtml.new)
+else
+  require 'rdoc/markup'
+  require 'rdoc/markup/to_html'
+  print RDoc::Markup.new.convert(input, RDoc::Markup::ToHtml.new)
+end
