@@ -7,8 +7,11 @@ if (RUBY_VERSION < '1.9')
   require 'rdoc/markup/simple_markup'
   require 'rdoc/markup/simple_markup/to_html'
   print SM::SimpleMarkup.new.convert(input, SM::ToHtml.new)
-else
+elsif (RUBY_VERSION < '2.1')
   require 'rdoc/markup'
   require 'rdoc/markup/to_html'
   print RDoc::Markup.new.convert(input, RDoc::Markup::ToHtml.new)
+else
+  require 'rdoc'
+  print RDoc::Markup::ToHtml.new(RDoc::Options.new).convert(input)
 end
